@@ -1,3 +1,4 @@
+import 'package:egas_brothers_pizzaria/src/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -5,8 +6,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Container(),
-    );
+    return MaterialApp(home: SplashScreen());
   }
 }
