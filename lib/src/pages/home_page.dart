@@ -53,73 +53,64 @@ class HomePage extends StatelessWidget {
               HeaderWidget(client: client),
 
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
 
               // Menu Category
               SizedBox(
-                height: 100, // Defina a altura desejada do menu
+                height: 120, // Defina a altura desejada do menu
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     // ALL
                     Column(
                       children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.grey[800],
-                          radius: 40,
+                        Image.asset(
+                          'lib/images/categories/cat_all.png',
+                          height: 100,
                         ),
                         const Text('Tudo')
                       ],
                     ),
-                    const SizedBox(
-                      width: 20,
-                    ),
                     // OFFERS
-                    const Column(
+                    Column(
                       children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.red,
-                          radius: 40,
+                        Image.asset(
+                          'lib/images/categories/cat_sale.png',
+                          height: 100,
                         ),
-                        Text('Ofertas')
+                        const Text('Ofertas')
                       ],
                     ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+
                     // PIZZAS
-                    const Column(
+                    Column(
                       children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.green,
-                          radius: 40,
+                        Image.asset(
+                          'lib/images/categories/cat_pizzas.png',
+                          height: 100,
                         ),
-                        Text('Pizzas')
+                        const Text('Pizzas')
                       ],
                     ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+
                     // Bebidas
-                    const Column(
+                    Column(
                       children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.purple,
-                          radius: 40,
+                        Image.asset(
+                          'lib/images/categories/cat_drinks.png',
+                          height: 100,
                         ),
-                        Text('Bebidas')
+                        const Text('Bebidas')
                       ],
                     ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+
                     // Porções
                     Column(
                       children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.cyan[200],
-                          radius: 40,
+                        Image.asset(
+                          'lib/images/categories/cat_portions.png',
+                          height: 100,
                         ),
                         const Text('Porções')
                       ],
@@ -196,6 +187,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
+
               // BEBIDAS
               Flexible(
                 flex: 1,
