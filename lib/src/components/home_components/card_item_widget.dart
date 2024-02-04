@@ -6,7 +6,7 @@ class CardItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 15, top: 15),
+      margin: const EdgeInsets.only(right: 15, top: 10, bottom: 10),
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -34,9 +34,18 @@ class CardItemWidget extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const Text('Descrição '),
+          const Text('Descrição do produto', style: TextStyle(fontSize: 12)),
+          const SizedBox(
+            height: 5,
+          ),
           const Row(
-            children: [Text('2-3'), Icon(Icons.person_2)],
+            children: [
+              Text('2-3'),
+              SizedBox(
+                width: 5,
+              ),
+              Icon(Icons.people_rounded)
+            ],
           ),
           const SizedBox(
             height: 10,
