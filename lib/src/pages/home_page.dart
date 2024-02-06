@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:egas_brothers_pizzaria/src/components/home_components/card_item_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/home_components/header_widget.dart';
+import 'package:egas_brothers_pizzaria/src/components/home_components/menu_category.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -61,60 +62,27 @@ class HomePage extends StatelessWidget {
                 height: 120, // Defina a altura desejada do menu
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: [
+                  children: const [
                     // ALL
-                    Column(
-                      children: [
-                        Image.asset(
-                          'lib/images/categories/cat_all.png',
-                          height: 100,
-                        ),
-                        const Text('Tudo')
-                      ],
-                    ),
+                    MenuCategory(
+                        text: 'Tudo',
+                        imagePath: 'lib/images/categories/cat_all.png'),
                     // OFFERS
-                    Column(
-                      children: [
-                        Image.asset(
-                          'lib/images/categories/cat_sale.png',
-                          height: 100,
-                        ),
-                        const Text('Ofertas')
-                      ],
-                    ),
-
+                    MenuCategory(
+                        text: 'Ofertas',
+                        imagePath: 'lib/images/categories/cat_sale.png'),
                     // PIZZAS
-                    Column(
-                      children: [
-                        Image.asset(
-                          'lib/images/categories/cat_pizzas.png',
-                          height: 100,
-                        ),
-                        const Text('Pizzas')
-                      ],
-                    ),
-
+                    MenuCategory(
+                        text: 'Pizzas',
+                        imagePath: 'lib/images/categories/cat_pizzas.png'),
                     // Bebidas
-                    Column(
-                      children: [
-                        Image.asset(
-                          'lib/images/categories/cat_drinks.png',
-                          height: 100,
-                        ),
-                        const Text('Bebidas')
-                      ],
-                    ),
-
+                    MenuCategory(
+                        text: 'Bebidas',
+                        imagePath: 'lib/images/categories/cat_drinks.png'),
                     // Porções
-                    Column(
-                      children: [
-                        Image.asset(
-                          'lib/images/categories/cat_portions.png',
-                          height: 100,
-                        ),
-                        const Text('Porções')
-                      ],
-                    ),
+                    MenuCategory(
+                        text: 'Porções',
+                        imagePath: 'lib/images/categories/cat_portions.png'),
                   ],
                 ),
               ),
