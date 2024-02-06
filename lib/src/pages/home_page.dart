@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:egas_brothers_pizzaria/src/components/home_components/card_item_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/home_components/header_widget.dart';
+import 'package:egas_brothers_pizzaria/src/components/home_components/menu_category.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -53,77 +54,35 @@ class HomePage extends StatelessWidget {
               HeaderWidget(client: client),
 
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
 
               // Menu Category
               SizedBox(
-                height: 100, // Defina a altura desejada do menu
+                height: 120, // Defina a altura desejada do menu
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: [
+                  children: const [
                     // ALL
-                    Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.grey[800],
-                          radius: 40,
-                        ),
-                        const Text('Tudo')
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+                    MenuCategory(
+                        text: 'Tudo',
+                        imagePath: 'lib/images/categories/cat_all.png'),
                     // OFFERS
-                    const Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.red,
-                          radius: 40,
-                        ),
-                        Text('Ofertas')
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+                    MenuCategory(
+                        text: 'Ofertas',
+                        imagePath: 'lib/images/categories/cat_sale.png'),
                     // PIZZAS
-                    const Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.green,
-                          radius: 40,
-                        ),
-                        Text('Pizzas')
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+                    MenuCategory(
+                        text: 'Pizzas',
+                        imagePath: 'lib/images/categories/cat_pizzas.png'),
                     // Bebidas
-                    const Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.purple,
-                          radius: 40,
-                        ),
-                        Text('Bebidas')
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
+                    MenuCategory(
+                        text: 'Bebidas',
+                        imagePath: 'lib/images/categories/cat_drinks.png'),
                     // Porções
-                    Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: Colors.cyan[200],
-                          radius: 40,
-                        ),
-                        const Text('Porções')
-                      ],
-                    ),
+                    MenuCategory(
+                        text: 'Porções',
+                        imagePath: 'lib/images/categories/cat_portions.png'),
                   ],
                 ),
               ),
@@ -196,6 +155,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
+
               // BEBIDAS
               Flexible(
                 flex: 1,
