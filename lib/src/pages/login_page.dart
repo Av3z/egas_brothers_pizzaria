@@ -5,8 +5,8 @@ import 'package:egas_brothers_pizzaria/src/components/login_widgets/or_widget.da
 import 'package:egas_brothers_pizzaria/src/components/login_widgets/social_buttons_login_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/logo_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/primary_button_widget.dart';
-import 'package:egas_brothers_pizzaria/src/pages/home_page.dart';
 import 'package:egas_brothers_pizzaria/src/pages/register_page.dart';
+import 'package:egas_brothers_pizzaria/src/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,8 +19,13 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   var emailController = TextEditingController();
   var senhaController = TextEditingController();
+  final AuthService _authService = AuthService();
   String email = '';
   String password = '';
+
+  void onPressed() async {
+    await _authService.loginAccount(emailController.text, senhaController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,15 +73,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               // Login button
-              PrimaryButtonWidget(
-                  text: 'ENTRAR',
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomePage(),
-                        ));
-                  }),
+              PrimaryButtonWidget(text: 'ENTRAR', onPressed: onPressed),
 
               // No have account ?
               NoHaveAccountWidget(
