@@ -33,4 +33,8 @@ class AuthService {
         .doc(userModel.userId)
         .set(userModel.toJson());
   }
+
+  loggoutUser() {
+    _firebaseAuth.signOut();
+  }
 }
