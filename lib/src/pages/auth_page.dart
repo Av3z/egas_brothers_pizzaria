@@ -1,5 +1,5 @@
-import 'package:egas_brothers_pizzaria/src/pages/home_page.dart';
 import 'package:egas_brothers_pizzaria/src/pages/login_page.dart';
+import 'package:egas_brothers_pizzaria/src/pages/manager_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class _AuthPageState extends State<AuthPage> {
     return StreamBuilder(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        return snapshot.hasData ? const HomePage() : const LoginPage();
+        return snapshot.hasData ? const ManagerPage() : const LoginPage();
       },
     );
   }
