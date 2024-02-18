@@ -17,9 +17,9 @@ class ProfilePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 20),
         child: Column(
           children: [
-            const Row(
+            Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   maxRadius: 50,
                   backgroundColor: Colors.pinkAccent,
                   child: Icon(
@@ -27,12 +27,20 @@ class ProfilePage extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 25,
                 ),
                 Text(
-                  'Client',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                  'Cliente',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      shadows: [
+                        Shadow(
+                            color: Colors.black.withOpacity(0.1),
+                            offset: const Offset(0, 3),
+                            blurRadius: 3)
+                      ]),
                 )
               ],
             ),
@@ -43,12 +51,12 @@ class ProfilePage extends StatelessWidget {
                 leading: Icon(
                   Icons.person,
                   size: 35,
-                  color: Colors.orange,
+                  color: Color(0xFFE85D18),
                 ),
-                title: Text('Informações Pessoais'),
+                title: Text('Informações pessoais'),
                 trailing: Icon(
                   Icons.arrow_forward_ios_rounded,
-                  color: Colors.orange,
+                  color: Color(0xFFE85D18),
                 )),
             const Divider(
               thickness: 0.3,
@@ -57,12 +65,12 @@ class ProfilePage extends StatelessWidget {
                 leading: Icon(
                   Icons.location_on,
                   size: 35,
-                  color: Colors.orange,
+                  color: Color(0xFFE85D18),
                 ),
-                title: Text('Meus Endereços'),
+                title: Text('Meus endereços'),
                 trailing: Icon(
                   Icons.arrow_forward_ios_rounded,
-                  color: Colors.orange,
+                  color: Color(0xFFE85D18),
                 )),
             const Divider(
               thickness: 0.3,
@@ -71,30 +79,30 @@ class ProfilePage extends StatelessWidget {
                 leading: Icon(
                   Icons.notifications,
                   size: 35,
-                  color: Colors.orange,
+                  color: Color(0xFFE85D18),
                 ),
                 title: Text('Notificações'),
                 trailing: Icon(
                   Icons.arrow_forward_ios_rounded,
-                  color: Colors.orange,
+                  color: Color(0xFFE85D18),
                 )),
             const SizedBox(
               height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
                   Row(
                     children: [
                       Icon(
-                        Icons.insert_drive_file_rounded,
-                        color: Colors.grey[800],
+                        Icons.description,
+                        color: Color(0xfF696969),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 10,
                       ),
-                      const Text(
+                      Text(
                         'Termos de uso',
                         style: TextStyle(
                             color: Color(0xFF696969),
@@ -103,19 +111,19 @@ class ProfilePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 2,
                   ),
                   Row(
                     children: [
                       Icon(
-                        Icons.info_rounded,
-                        color: Colors.grey[800],
+                        Icons.privacy_tip,
+                        color: Color(0xfF696969),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 10,
                       ),
-                      const Text(
+                      Text(
                         'Política de privacidade',
                         style: TextStyle(
                             color: Color(0xFF696969),
@@ -137,9 +145,9 @@ class ProfilePage extends StatelessWidget {
                     shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6))),
                     backgroundColor:
-                        const MaterialStatePropertyAll(Colors.redAccent)),
+                        const MaterialStatePropertyAll(Color(0xFFFF1200))),
                 onPressed: onPress,
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -147,12 +155,18 @@ class ProfilePage extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18),
+                          fontSize: 18,
+                          shadows: [
+                            Shadow(
+                                color: Colors.black.withOpacity(0.3),
+                                offset: const Offset(0, 3),
+                                blurRadius: 3)
+                          ]),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
-                    Icon(
+                    const Icon(
                       Icons.logout,
                       color: Colors.white,
                     )
