@@ -57,95 +57,86 @@ class HomePage extends StatelessWidget {
                     20), // Adicione um espaço entre os menus e o conteúdo abaixo
 
             // Ofertas
-            Flexible(
-              flex: 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Ofertas',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Ofertas',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
 
-                  // Content
-                  SizedBox(
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: const [
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                      ],
-                    ),
+                // Content
+                SizedBox(
+                  height: 250,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: const [
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
 
             const SizedBox(height: 20), // Adicione um espaço entre os menus
 
             // Pizzas
-            Flexible(
-              flex: 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Pizzas',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Pizzas',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
 
-                  // Content
-                  SizedBox(
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: const [
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                      ],
-                    ),
+                // Content
+                SizedBox(
+                  height: 250,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: const [
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             const SizedBox(
               height: 15,
             ),
 
             // BEBIDAS
-            Flexible(
-              flex: 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Bebidas',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Bebidas',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
 
-                  // Content
-                  SizedBox(
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: const [
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                        CardItemWidget(),
-                      ],
-                    ),
+                // Content
+                SizedBox(
+                  height: 250,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: const [
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                      CardItemWidget(),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
