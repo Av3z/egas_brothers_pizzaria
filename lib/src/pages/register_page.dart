@@ -4,7 +4,9 @@ import 'package:egas_brothers_pizzaria/src/components/register_widgets/or_widget
 import 'package:egas_brothers_pizzaria/src/components/register_widgets/social_buttons_login_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/logo_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/primary_button_widget.dart';
+import 'package:egas_brothers_pizzaria/src/models/user_model.dart';
 import 'package:egas_brothers_pizzaria/src/pages/login_page.dart';
+import 'package:egas_brothers_pizzaria/src/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -19,12 +21,16 @@ class _RegisterPageState extends State<RegisterPage> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   var confirmPasswordController = TextEditingController();
-  //final RegisterService _registerService = RegisterService();
-  String email = '';
-  String password = '';
+  final AuthService _authService = AuthService();
 
   void onPressed() async {
-    //   await _registerService.RegisterAccount(nameController.text, emailController.text, passwordController.text, confirmPasswordController.text);
+    var userModel = UserModel(
+        userId: "",
+        name: nameController.text,
+        email: emailController.text,
+        password: passwordController.text,
+        phone: "");
+    await _authService.registerAccount(userModel);
   }
 
   @override
@@ -122,6 +128,3 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 }
-
-
-
