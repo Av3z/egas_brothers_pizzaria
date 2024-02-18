@@ -10,6 +10,7 @@ class AuthService {
       EncryptPasswordService();
 
   Future<void> loginAccount(email, password) async {
+    password = _encryptPasswordService.hashPassword(password);
     await _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
   }

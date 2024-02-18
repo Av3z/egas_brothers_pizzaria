@@ -21,7 +21,7 @@ class _ManagerPageState extends State<ManagerPage> {
     const CouponPage(),
     const HomePage(),
     const CartPage(),
-    const ProfilePage()
+    ProfilePage()
   ];
 
   @override
