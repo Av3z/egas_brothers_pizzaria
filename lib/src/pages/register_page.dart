@@ -38,63 +38,56 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFFAF2ED),
       body: SingleChildScrollView(
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 35),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 35),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
               // Logo widget
               const LogoWidget(
                 height: 180,
               ),
 
-              const SizedBox(
-                height: 30,
-              ),
+              const SizedBox(height: 30),
 
               // Input Nome
               InputWidget(
-                  text: 'Nome',
-                  controller: nameController,
-                  onChanged: (value) {}),
-
-              const SizedBox(
-                height: 15,
+                text: 'Nome',
+                controller: nameController,
+                onChanged: (value) {},
               ),
+
+              const SizedBox(height: 15),
 
               // input email
               InputWidget(
-                  text: 'E-mail',
-                  controller: emailController,
-                  onChanged: (value) {}),
-
-              const SizedBox(
-                height: 15,
+                text: 'E-mail',
+                controller: emailController,
+                onChanged: (value) {},
               ),
+
+              const SizedBox(height: 15),
 
               // INPUT PASSWORD
               InputWidget(
-                  text: 'Senha',
-                  controller: passwordController,
-                  obscureText: true,
-                  onChanged: (value) {}),
-
-              const SizedBox(
-                height: 15,
+                text: 'Senha',
+                controller: passwordController,
+                obscureText: true,
+                onChanged: (value) {},
               ),
+
+              const SizedBox(height: 15),
 
               // Input Confirm Password
               InputWidget(
-                  text: 'Confirme a Senha',
-                  controller: confirmPasswordController,
-                  obscureText: true,
-                  onChanged: (value) {}),
-
-              const SizedBox(
-                height: 24,
+                text: 'Confirme a Senha',
+                controller: confirmPasswordController,
+                obscureText: true,
+                onChanged: (value) {},
               ),
+
+              const SizedBox(height: 24),
 
               // Register button
               PrimaryButtonWidget(text: 'CADASTRAR', onPressed: onPressed),
@@ -103,16 +96,15 @@ class _RegisterPageState extends State<RegisterPage> {
               HaveAccountWidget(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
+                  );
                 },
               ),
 
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
 
               // Widget OR and Divider
               const OrWidget(),
@@ -121,7 +113,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
               // Social Buttons Register
               const SocialButtonsLoginWidget(),
-            ]),
+            ],
           ),
         ),
       ),
