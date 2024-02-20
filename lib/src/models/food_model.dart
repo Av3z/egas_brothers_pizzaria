@@ -23,7 +23,7 @@ class FoodModel {
     price = json['price'];
   }
 
-  toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'category': category,
       'imageId': imageId,
