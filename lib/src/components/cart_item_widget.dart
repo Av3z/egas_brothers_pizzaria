@@ -1,11 +1,16 @@
+import 'package:egas_brothers_pizzaria/src/models/food_model.dart';
 import 'package:flutter/material.dart';
 
-class CardItemWidget extends StatelessWidget {
-  const CardItemWidget({super.key});
+class CartItemWidget extends StatelessWidget {
+  final FoodModel foodModel;
+  final Function() removeButton;
+  const CartItemWidget(
+      {super.key, required this.foodModel, required this.removeButton});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5),
       width: 200,
       height: 80,
       child: Card(
@@ -14,22 +19,22 @@ class CardItemWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(5),
           child: ListTile(
-            title: const Text(
-              'Pizza de Metro',
-              style: TextStyle(fontSize: 15),
+            title: Text(
+              foodModel.title,
+              style: const TextStyle(fontSize: 15),
             ),
-            subtitle: const Text('RS 145,90'),
+            subtitle: Text('RS ${foodModel.price}'),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: removeButton,
                     icon: const Icon(
                       Icons.remove_circle_outline_outlined,
                       color: Color(0xFFE85D18),
                       size: 30,
                     )),
-                const Text('n'),
+                const Text('0'),
                 IconButton(
                     onPressed: () {},
                     icon: const Icon(
