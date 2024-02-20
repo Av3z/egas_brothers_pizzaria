@@ -36,17 +36,17 @@ class _DetailsPageState extends State<DetailsPage> {
     }
   }
 
-  saveCart() async {
-    try {
-      await _cartService.saveFoodModels(widget.foodModel);
-      print('Produto adicionado ao carrinho');
-    } catch (e) {
-      print('Erro ao salvar o FoodModel no Hive: $e');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
+    saveCart() async {
+      try {
+        await _cartService.saveFoodModels(widget.foodModel);
+        Navigator.pop(context);
+      } catch (e) {
+        print('Erro ao salvar o FoodModel no Hive: $e');
+      }
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFFFAF2ED),
       appBar: AppBar(

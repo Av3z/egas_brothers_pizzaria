@@ -35,12 +35,13 @@ class _HomePageState extends State<HomePage> {
 
             // Menu Category
             SizedBox(
-              height: 120, // Defina a altura desejada do menu
+              height: 135, // Defina a altura desejada do menu
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: const [
                   // ALL
                   MenuCategory(
+                      activated: true,
                       text: 'Tudo',
                       imagePath: 'lib/images/categories/cat_all.png'),
 
@@ -109,6 +110,7 @@ class _HomePageState extends State<HomePage> {
                                     description: foodModel.description,
                                     peoples: foodModel.peoples,
                                     price: foodModel.price,
+                                    priceColor: const Color(0xFF2E9048),
                                   ),
                                 );
                               }).toList(),
@@ -118,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
 
-                const SizedBox(height: 20), // Adicione um espaço entre os menus
+                const SizedBox(height: 20),
 
                 // Pizzas
                 Column(

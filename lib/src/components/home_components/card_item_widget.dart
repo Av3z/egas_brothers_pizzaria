@@ -9,7 +9,7 @@ class CardItemWidget extends StatefulWidget {
   final double price;
   final Color priceColor;
 
-  CardItemWidget(
+  const CardItemWidget(
       {super.key,
       required this.title,
       required this.imageId,
@@ -72,7 +72,7 @@ class _CardItemWidgetState extends State<CardItemWidget> {
                         topRight: Radius.circular(6)),
                     child: Image.network(
                       _imagePath,
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.cover,
                     ),
                   )
                 : Image.asset('lib/images/Logo.png'),
