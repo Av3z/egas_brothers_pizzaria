@@ -1,4 +1,3 @@
-import 'package:egas_brothers_pizzaria/src/components/details_components/item_details.dart';
 import 'package:egas_brothers_pizzaria/src/components/details_components/pizza_section.dart';
 import 'package:egas_brothers_pizzaria/src/components/primary_button_widget.dart';
 import 'package:egas_brothers_pizzaria/src/models/food_model.dart';
