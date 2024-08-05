@@ -14,5 +14,5 @@ void main() async {
       await path_provider.getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
 
-  runApp(App());
+  runApp(const App());
 }

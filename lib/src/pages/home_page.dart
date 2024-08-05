@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:egas_brothers_pizzaria/src/components/custom_load.dart';
 import 'package:egas_brothers_pizzaria/src/components/home_components/card_item_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/home_components/header_widget.dart';
 import 'package:egas_brothers_pizzaria/src/components/home_components/menu_category.dart';
@@ -84,37 +85,40 @@ class _HomePageState extends State<HomePage> {
                     // Content
                     SizedBox(
                         height: 270,
-                        child: StreamBuilder<QuerySnapshot>(
+                        child: StreamBuilder<QuerySnapshot?>(
                           stream: _foodService.getAllFoods('Ofertas'),
                           builder: (context, snapshot) {
-                            return ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: snapshot.data!.docs.map((e) {
-                                var foodModel = FoodModel.fromJson(
-                                    (e.data() as Map<String, dynamic>));
+                            return !snapshot.hasData
+                                ? customLoad()
+                                : ListView(
+                                    scrollDirection: Axis.horizontal,
+                                    children: snapshot.data!.docs.map((e) {
+                                      var foodModel = FoodModel.fromJson(
+                                          (e.data() as Map<String, dynamic>));
 
-                                return GestureDetector(
-                                  key: Key(foodModel.imageId),
-                                  onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) {
-                                        return DetailsPage(
-                                          foodModel: foodModel,
-                                        );
-                                      },
-                                    ));
-                                  },
-                                  child: CardItemWidget(
-                                    title: foodModel.title,
-                                    imageId: foodModel.imageId,
-                                    description: foodModel.description,
-                                    peoples: foodModel.peoples,
-                                    price: foodModel.price,
-                                    priceColor: const Color(0xFF2E9048),
-                                  ),
-                                );
-                              }).toList(),
-                            );
+                                      return GestureDetector(
+                                        key: Key(foodModel.imageId),
+                                        onTap: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                            builder: (context) {
+                                              return DetailsPage(
+                                                foodModel: foodModel,
+                                              );
+                                            },
+                                          ));
+                                        },
+                                        child: CardItemWidget(
+                                          title: foodModel.title,
+                                          imageId: foodModel.imageId,
+                                          description: foodModel.description,
+                                          peoples: foodModel.peoples,
+                                          price: foodModel.price,
+                                          priceColor: const Color(0xFF2E9048),
+                                        ),
+                                      );
+                                    }).toList(),
+                                  );
                           },
                         )),
                   ],
@@ -138,33 +142,36 @@ class _HomePageState extends State<HomePage> {
                         child: StreamBuilder<QuerySnapshot>(
                           stream: _foodService.getAllFoods('Pizzas'),
                           builder: (context, snapshot) {
-                            return ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: snapshot.data!.docs.map((e) {
-                                var foodModel = FoodModel.fromJson(
-                                    (e.data() as Map<String, dynamic>));
+                            return !snapshot.hasData
+                                ? customLoad()
+                                : ListView(
+                                    scrollDirection: Axis.horizontal,
+                                    children: snapshot.data!.docs.map((e) {
+                                      var foodModel = FoodModel.fromJson(
+                                          (e.data() as Map<String, dynamic>));
 
-                                return GestureDetector(
-                                  key: Key(foodModel.imageId),
-                                  onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) {
-                                        return DetailsPage(
-                                          foodModel: foodModel,
-                                        );
-                                      },
-                                    ));
-                                  },
-                                  child: CardItemWidget(
-                                    title: foodModel.title,
-                                    imageId: foodModel.imageId,
-                                    description: foodModel.description,
-                                    peoples: foodModel.peoples,
-                                    price: foodModel.price,
-                                  ),
-                                );
-                              }).toList(),
-                            );
+                                      return GestureDetector(
+                                        key: Key(foodModel.imageId),
+                                        onTap: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                            builder: (context) {
+                                              return DetailsPage(
+                                                foodModel: foodModel,
+                                              );
+                                            },
+                                          ));
+                                        },
+                                        child: CardItemWidget(
+                                          title: foodModel.title,
+                                          imageId: foodModel.imageId,
+                                          description: foodModel.description,
+                                          peoples: foodModel.peoples,
+                                          price: foodModel.price,
+                                        ),
+                                      );
+                                    }).toList(),
+                                  );
                           },
                         )),
                   ],
@@ -189,33 +196,36 @@ class _HomePageState extends State<HomePage> {
                         child: StreamBuilder<QuerySnapshot>(
                           stream: _foodService.getAllFoods('Porções'),
                           builder: (context, snapshot) {
-                            return ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: snapshot.data!.docs.map((e) {
-                                var foodModel = FoodModel.fromJson(
-                                    (e.data() as Map<String, dynamic>));
+                            return !snapshot.hasData
+                                ? customLoad()
+                                : ListView(
+                                    scrollDirection: Axis.horizontal,
+                                    children: snapshot.data!.docs.map((e) {
+                                      var foodModel = FoodModel.fromJson(
+                                          (e.data() as Map<String, dynamic>));
 
-                                return GestureDetector(
-                                  key: Key(foodModel.imageId),
-                                  onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) {
-                                        return DetailsPage(
-                                          foodModel: foodModel,
-                                        );
-                                      },
-                                    ));
-                                  },
-                                  child: CardItemWidget(
-                                    title: foodModel.title,
-                                    imageId: foodModel.imageId,
-                                    description: foodModel.description,
-                                    peoples: foodModel.peoples,
-                                    price: foodModel.price,
-                                  ),
-                                );
-                              }).toList(),
-                            );
+                                      return GestureDetector(
+                                        key: Key(foodModel.imageId),
+                                        onTap: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                            builder: (context) {
+                                              return DetailsPage(
+                                                foodModel: foodModel,
+                                              );
+                                            },
+                                          ));
+                                        },
+                                        child: CardItemWidget(
+                                          title: foodModel.title,
+                                          imageId: foodModel.imageId,
+                                          description: foodModel.description,
+                                          peoples: foodModel.peoples,
+                                          price: foodModel.price,
+                                        ),
+                                      );
+                                    }).toList(),
+                                  );
                           },
                         )),
                   ],
@@ -241,33 +251,36 @@ class _HomePageState extends State<HomePage> {
                         child: StreamBuilder<QuerySnapshot>(
                           stream: _foodService.getAllFoods('Bebidas'),
                           builder: (context, snapshot) {
-                            return ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: snapshot.data!.docs.map((e) {
-                                var foodModel = FoodModel.fromJson(
-                                    (e.data() as Map<String, dynamic>));
+                            return !snapshot.hasData
+                                ? customLoad()
+                                : ListView(
+                                    scrollDirection: Axis.horizontal,
+                                    children: snapshot.data!.docs.map((e) {
+                                      var foodModel = FoodModel.fromJson(
+                                          (e.data() as Map<String, dynamic>));
 
-                                return GestureDetector(
-                                  key: Key(foodModel.imageId),
-                                  onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) {
-                                        return DetailsPage(
-                                          foodModel: foodModel,
-                                        );
-                                      },
-                                    ));
-                                  },
-                                  child: CardItemWidget(
-                                    title: foodModel.title,
-                                    imageId: foodModel.imageId,
-                                    description: foodModel.description,
-                                    peoples: foodModel.peoples,
-                                    price: foodModel.price,
-                                  ),
-                                );
-                              }).toList(),
-                            );
+                                      return GestureDetector(
+                                        key: Key(foodModel.imageId),
+                                        onTap: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                            builder: (context) {
+                                              return DetailsPage(
+                                                foodModel: foodModel,
+                                              );
+                                            },
+                                          ));
+                                        },
+                                        child: CardItemWidget(
+                                          title: foodModel.title,
+                                          imageId: foodModel.imageId,
+                                          description: foodModel.description,
+                                          peoples: foodModel.peoples,
+                                          price: foodModel.price,
+                                        ),
+                                      );
+                                    }).toList(),
+                                  );
                           },
                         )),
                   ],
